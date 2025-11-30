@@ -7,10 +7,6 @@ let tasks = [];
 
 function addTask() {
     let task = prompt("Enter a new task: ");
-    if (task.trim() === "") {
-        console.log("❌ Task cannot be empty.");
-        return;
-    }
     tasks.push(task);
     console.log("✔ Task added.");
 }
@@ -24,7 +20,7 @@ function removeTask() {
     displayTasks();
     let index = parseInt(prompt("Enter task number to remove: "), 10);
 
-    if (isNaN(index) || index < 1 || index > tasks.length) {
+    if (index < 1 || index > tasks.length) {
         console.log("❌ Invalid index.");
         return;
     }
@@ -83,3 +79,4 @@ while (true) {
             console.log("❌ Invalid command. Try again.");
     }
 }
+
